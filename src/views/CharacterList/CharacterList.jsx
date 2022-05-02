@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import CharacterCard from '../../components/Card/CharacterCard';
 import { fetchCharacters } from '../../services/rick';
 
@@ -16,6 +17,10 @@ export default function CharacterList() {
   return loading ? (
     <div>Loading Characters...</div>
   ) : (
-    characters.map((char) => <CharacterCard key={char.id} {...char} />)
+    characters.map((char) => (
+      <Link key={char.id} to={`/character/${char.id}`}>
+        <CharacterCard {...char} />
+      </Link>
+    ))
   );
 }
