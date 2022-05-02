@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -8,8 +9,11 @@ export default function App() {
   const history = useHistory();
   return (
     <>
-      <h1>Rick and Morty Characters</h1>
-      <p onClick={() => history.push('/')}>Home</p>
+      <ul>
+        <Link to={'/'}>Home</Link>
+        <Link to={`/status?status=alive`}>Alive</Link>
+        <Link to={`/status?status=dead`}>Dead</Link>
+      </ul>
       <Switch>
         <Route path={'/character/:id'}>
           <CharacterDetail />

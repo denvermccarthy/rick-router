@@ -8,7 +8,6 @@ export default function CharacterDetail() {
   const { name, status, species, location, image } = character;
   useEffect(() => {
     const fetchData = async () => {
-      console.log('mount');
       const resp = await fetch(
         `https://rickandmortyapi.com/api/character/${id}`
       );
