@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import CharacterCard from '../../components/Card/CharacterCard';
 import { fetchCharacters } from '../../services/rick';
 
 export default function CharacterList() {
@@ -12,5 +13,9 @@ export default function CharacterList() {
     };
     fetch();
   }, []);
-  return <div>CharacterList</div>;
+  return loading ? (
+    <div>Loading Characters...</div>
+  ) : (
+    characters.map((char) => <CharacterCard key={char.id} {...char} />)
+  );
 }
