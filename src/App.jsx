@@ -11,8 +11,8 @@ export default function App() {
     <>
       <ul>
         <Link to={'/'}>Home</Link>
-        <Link to={`/status?status=alive`}>Alive</Link>
-        <Link to={`/status?status=dead`}>Dead</Link>
+        <Link to={`/status?status=alive`}>Alive Characters</Link>
+        <Link to={`/status?status=dead`}>Dead Characters</Link>
       </ul>
       <Switch>
         <Route path={'/character/:id'}>
