@@ -31,20 +31,6 @@ describe('App is rendering and links are working properly', () => {
     fireEvent.click(deadLink);
 
     await waitForElementToBeRemoved(rick);
-
-    //     fireEvent.click(rick);
-
-    //     const image = await screen.findByAltText(
-    //       'An Image of Rick Sanchez',
-    //       {},
-    //       { timeout: 5000 }
-    //     );
-
-    //     // check for rick again
-    //     return waitFor(() => {
-    //       const alive = screen.queryAllByText('Current Status: Alive');
-    //       expect(alive).toEqual([]);
-    //     });
   });
   it('should render a list of characters, users can click on a details page', async () => {
     render(

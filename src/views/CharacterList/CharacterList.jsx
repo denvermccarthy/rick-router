@@ -17,7 +17,7 @@ export default function CharacterList() {
       setLoading(false);
     };
     fetch();
-  }, [search]);
+  }, [statusParams]);
   return loading ? (
     <div>Loading Characters...</div>
   ) : (
