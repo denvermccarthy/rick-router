@@ -1,22 +1,19 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-export default function CharacterDetail() {
+export default function CharacterDetail({ characters = [] }) {
   const [loading, setLoading] = useState(true);
   const [character, setCharacter] = useState({});
   const { id } = useParams();
   const { name, status, species, location, image } = character;
   useEffect(() => {
-    const fetchData = async () => {
-      const resp = await fetch(
-        `https://rickandmortyapi.com/api/character/${id}`
-      );
-      const data = await resp.json();
+    const getData = () => {
+      const data = characters.find((char) => char.id === Number(id));
       setCharacter(data);
       setLoading(false);
     };
-    fetchData();
-  }, []);
+    getData();
+  }, [id]);
 
   return (
     <>
